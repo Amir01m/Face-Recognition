@@ -95,8 +95,8 @@ This project is **not finished** and is intentionally designed to be extended.
 
 ### Planned Features:
 
-* 🖥 Graphical User Interface (GUI)
-* ➕ Add new faces directly from the camera
+* 🖥 Graphical User Interface (GUI)✅
+* ➕ Add new faces directly from the camera✅
 * ❌ Remove faces from the system
 * 🗄 User-managed face database
 * 💾 Save face data using a database (SQLite)
