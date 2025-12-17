@@ -54,7 +54,7 @@ project/
 ### 1️⃣ Install Dependencies
 
 ```bash
-pip install opencv-python face-recognition numpy
+pip install opencv-python face-recognition numpy tkinter shutil glob os datetime
 ```
 
 > ⚠️ `face_recognition` requires **dlib**. Make sure it is installed correctly on your system.
