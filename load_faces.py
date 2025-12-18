@@ -1,6 +1,5 @@
 import cv2
 import face_recognition as fr
-import numpy as np
 import glob
 import os
 
@@ -19,6 +18,5 @@ def face_loader(known_faces = [],known_names = []):
         if len(encodings) > 0:
             known_faces.append(encodings[0])
             known_names.append(name)
-        else:
-            print(f"⚠️ No face found in {img_path}")
+
     return known_faces , known_names

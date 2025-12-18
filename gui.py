@@ -1,7 +1,7 @@
 import tkinter as tk
 from rec_face import main
 from file_handl import add_pics
-
+from take_pic import take_photos_with_camera
 #-------------------GUI--------------------
 def gui():
     root = tk.Tk()
@@ -17,9 +17,15 @@ def gui():
         del_but = tk.Button(add_win, text="Select Pic", font=("Arial", 10), width=12, height=2,command=add_pics)
         del_but.pack(side=tk.TOP, padx=20,pady=20)
 
+        take_pic = tk.Button(add_win,text="Take a Picture",font=("Arial", 10), width=12, height=2,command=take_photos_with_camera)
+        take_pic.pack(padx=20,pady=20)
+        
         exit_btn = tk.Button(add_win, text="Exit", font=("Arial", 9), width=12, height=2,command=add_win.destroy,fg="white",bg="red")
         exit_btn.pack(side=tk.BOTTOM, padx=20,pady=20)
+        
+      
 
+    
 
     tk.Label(root, text="Face Recognition", font=("Arial", 16, "bold"), fg="green").pack(pady=30)
     
