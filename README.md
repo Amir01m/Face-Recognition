@@ -23,7 +23,9 @@ This project is designed as a **practical, extendable AI/ML project**, suitable 
 project/
 │
 ├── rec_face.py          # Main camera & recognition logic
-├── load_faces.py        # Loads face encodings from database folder
+├── load_faces.py        # Load face encodings from database folder
+├── take_pic.py
+├── filehandl.py
 ├── database/            # Face image database (user-defined)
 │   ├── Amir.jpg
 │   └── Ali.jpeg
@@ -74,7 +76,7 @@ John.jpeg
 ### 3️⃣ Run the Program
 
 ```bash
-python main.py
+python gui.py
 ```
 
 Press **Q** to quit the camera.
