@@ -27,7 +27,6 @@ def take_photos_with_camera():
             new_filename = take_pic_gui()
 
             filename = new_filename
-            print(filename)
             filename = str(filename)
             filepath = os.path.join(save_folder, filename)
 
