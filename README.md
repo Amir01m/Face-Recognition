@@ -62,11 +62,12 @@ pip install opencv-python face-recognition numpy tkinter shutil glob os datetime
 > ⚠️ `face_recognition` requires **dlib**. Make sure it is installed correctly on your system.
 
 ### 2️⃣ Add Face Images
-
-* Create a folder named `database`
-* Add face images inside it
-* Name each image after the person:
-
+* run the program and 
+* click add Picture
+* if you have camera click take pic with camera
+* then if you have image on your pc click on select pic
+* enter a name for your picture
+* then click the Start the Camera
 ```
 Amir.jpg
 Sara.png
