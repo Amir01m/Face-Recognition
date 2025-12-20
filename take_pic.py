@@ -3,10 +3,7 @@ import os
 from file_handl import take_pic_gui
 
 def take_photos_with_camera():
-    save_folder = "./database"
-    if not os.path.exists(save_folder):
-        os.makedirs(save_folder)
-    
+    save_folder = "./database"    
     cap = cv2.VideoCapture(0)
     
     if not cap.isOpened():

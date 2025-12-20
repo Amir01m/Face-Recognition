@@ -2,6 +2,7 @@ import tkinter as tk
 from rec_face import main
 from file_handl import add_pics
 from take_pic import take_photos_with_camera
+from del_face import del_face_file
 #-------------------GUI--------------------
 def gui():
     root = tk.Tk()
@@ -47,7 +48,8 @@ def gui():
         btn_del_pc = tk.Button(
             win,
             text="Delete by Selecting from PC",
-            width=25
+            width=25,
+            command=del_face_file
         )
         btn_del_pc.pack(pady=5)
         
@@ -80,5 +82,3 @@ def gui():
     
     root.mainloop()
 
-if __name__ == "__main__":
-    gui()
