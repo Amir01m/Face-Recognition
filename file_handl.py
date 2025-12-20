@@ -100,9 +100,7 @@ def take_pic_gui():
             return
         dst_dir = "./database"
         dst_path = dst_dir
-        if not os.path.exists(dst_dir):
-            os.mkdir(dst_dir)
-
+        
         counter = 1
         while os.path.exists(dst_path):
             new_filename = f"{name}_{counter}.jpg"

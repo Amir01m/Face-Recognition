@@ -2,7 +2,7 @@ import tkinter as tk
 from rec_face import main
 from file_handl import add_pics
 from take_pic import take_photos_with_camera
-from del_face import del_face_file
+from del_face import del_face_file ,del_by_name
 #-------------------GUI--------------------
 def gui():
     root = tk.Tk()
@@ -41,7 +41,8 @@ def gui():
         btn_del_name = tk.Button(
             win,
             text="Delete by Name",
-            width=25
+            width=25,
+            command=del_by_name
         )
         btn_del_name.pack(pady=10)
 
