@@ -24,8 +24,10 @@ project/
 │
 ├── rec_face.py          # Main camera & recognition logic
 ├── load_faces.py        # Load face encodings from database folder
-├── take_pic.py
-├── filehandl.py
+├── take_pic.py          # Take picture from person you want to add
+├── main.py              # Run this file
+├── filehandl.py         # Add files to database folder
+├── gui.py               # Gui for the program
 ├── database/            # Face image database (user-defined)
 │   ├── Amir.jpg
 │   └── Ali.jpeg
@@ -77,7 +79,7 @@ John.jpeg
 ### 3️⃣ Run the Program
 
 ```bash
-python gui.py
+python main.py
 ```
 
 Press **Q** to quit the camera.
@@ -100,7 +102,7 @@ This project is **not finished** and is intentionally designed to be extended.
 
 * 🖥 Graphical User Interface (GUI)✅
 * ➕ Add new faces directly from the camera✅
-* ❌ Remove faces from the system
+* ❌ Remove faces from the system✅
 * 🗄 User-managed face database
 * 💾 Save face data using a database (SQLite)
 * 🧠 Upgrade to Deep Learning models (CNN)
