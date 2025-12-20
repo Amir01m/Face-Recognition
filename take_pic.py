@@ -28,8 +28,9 @@ def take_photos_with_camera():
 
             filename = new_filename
             filename = str(filename)
+            
             filepath = os.path.join(save_folder, filename)
-
+            frame = cv2.cvtColor(frame,cv2.COLOR_BGR2RGB)
             cv2.imwrite(filepath,frame)
             
 

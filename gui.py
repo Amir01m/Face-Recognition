@@ -15,15 +15,51 @@ def gui():
         add_win.resizable(False,False)
 
         del_but = tk.Button(add_win, text="Select Pic", font=("Arial", 10), width=12, height=2,command=add_pics)
-        del_but.pack(side=tk.TOP, padx=20,pady=20)
+        del_but.pack(side=tk.TOP, padx=20,pady=10)
 
         take_pic = tk.Button(add_win,text="Take a Picture",font=("Arial", 10), width=12, height=2,command=take_photos_with_camera)
-        take_pic.pack(padx=20,pady=20)
+        take_pic.pack(padx=20,pady=10)
         
         exit_btn = tk.Button(add_win, text="Exit", font=("Arial", 9), width=12, height=2,command=add_win.destroy,fg="white",bg="red")
-        exit_btn.pack(side=tk.BOTTOM, padx=20,pady=20)
+        exit_btn.pack(side=tk.BOTTOM, padx=20,pady=10)
+    
+    def del_face_gui():
+        win = tk.Toplevel(root)
+        win.title("Delete Face")
+        win.geometry("350x200")
+        win.resizable(False, False)
+
+
+        title_lbl = tk.Label(
+            win,
+            text="Delete Face From System",
+            font=("Arial", 14, "bold")
+        )
+        title_lbl.pack(pady=10)
+
+        btn_del_name = tk.Button(
+            win,
+            text="Delete by Name",
+            width=25
+        )
+        btn_del_name.pack(pady=10)
+
+        btn_del_pc = tk.Button(
+            win,
+            text="Delete by Selecting from PC",
+            width=25
+        )
+        btn_del_pc.pack(pady=5)
         
-      
+        btn_exit = tk.Button(
+            win,
+            text="Exit",
+            width=25,
+            bg="red",
+            fg="white",
+            command=win.destroy
+        )
+        btn_exit.pack(padx=5)
 
     
 
@@ -32,7 +68,7 @@ def gui():
     bottom_frame = tk.Frame(root)
     bottom_frame.pack(side=tk.BOTTOM, pady=50)
     
-    del_but = tk.Button(bottom_frame, text="Delete Picture", font=("Arial", 10), width=12, height=2)
+    del_but = tk.Button(bottom_frame, text="Delete Picture", font=("Arial", 10), width=12, height=2,command=del_face_gui)
     del_but.pack(side=tk.LEFT, padx=20)
     
     add_but = tk.Button(bottom_frame, text="Add Picture", font=("Arial", 10), width=12, height=2,command=add_but_win)
