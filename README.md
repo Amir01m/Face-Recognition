@@ -28,6 +28,7 @@ project/
 ├── main.py              # Run this file
 ├── filehandl.py         # Add files to database folder
 ├── gui.py               # Gui for the program
+├── del_face.py          # Delete faces from your database folder
 ├── database/            # Face image database (user-defined)
 │   ├── Amir.jpg
 │   └── Ali.jpeg
