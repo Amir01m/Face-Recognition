@@ -66,9 +66,9 @@ pip install opencv-python face-recognition numpy tkinter shutil glob os datetime
 ### 2️⃣ Add Face Images
 * run the program and 
 * click add Picture
-* if you have camera click take pic with camera
-* then if you have image on your pc click on select pic
-* enter a name for your picture
+* If you have camera click take Pic with Camera
+* if you have image on your pc click on Select Pic
+* Choose a name for your picture
 * then click the Start the Camera
 ```
 Amir.jpg
