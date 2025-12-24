@@ -2,7 +2,7 @@ import cv2
 import face_recognition as fr
 import glob
 import os
-
+import re
 # ---------- Load known faces from folder ----------
 def face_loader(known_faces = [],known_names = []):
 
@@ -10,6 +10,7 @@ def face_loader(known_faces = [],known_names = []):
 
     for img_path in image_paths:
         name = os.path.splitext(os.path.basename(img_path))[0]
+        name = re.sub(r'[\d_]+', '', name)
         img = fr.load_image_file(img_path)
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
