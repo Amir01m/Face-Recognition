@@ -2,7 +2,7 @@ import cv2
 import face_recognition as fr
 import numpy as np
 from load_faces import face_loader
-
+from sql import can_log, insert_data
 # ---------- Camera ----------
 def main():
     known_faces , known_names = face_loader()
@@ -26,7 +26,9 @@ def main():
             if True in matches:
                 index = matches.index(True)
                 name = known_names[index]
-
+                if can_log(name):
+                    insert_data(name)
+            
             cv2.rectangle(img, (left, top), (right, bottom), (255, 0, 0), 2)
             cv2.putText(
                 img,
