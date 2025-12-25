@@ -29,6 +29,7 @@ project/
 ├── filehandl.py         # Add files to database folder
 ├── gui.py               # Gui for the program
 ├── del_face.py          # Delete faces from your database folder
+├── sql.py               # Make face log with SQLite for logging and recognized faces with timestamp
 ├── database/            # Face image database (user-defined)
 │   ├── Amir.jpg
 │   └── Ali.jpeg
@@ -105,9 +106,9 @@ This project is **not finished** and is intentionally designed to be extended.
 * ➕ Add new faces directly from the camera✅
 * ❌ Remove faces from the system✅
 * 🗄 User-managed face database
-* 💾 Save face data using a database (SQLite)
+* 💾 Save face data using a database (SQLite)✅
 * 🧠 Upgrade to Deep Learning models (CNN)
-* 📊 Face detection logs and timestamps
+* 📊 Face detection logs and timestamps✅
 
 Users will be able to **create their own database** using their own photos, and the system will recognize **only those individuals**.
 
