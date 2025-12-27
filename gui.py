@@ -79,7 +79,8 @@ def gui():
     
     camera_btn = tk.Button(root, text="Start Camera", font=("Arial", 12, "bold"), 
                           bg="blue", fg="white", width=15, height=2,command=main)
-    camera_btn.pack(side=tk.BOTTOM, pady=20)
+    camera_btn.pack(side=tk.BOTTOM, pady=15)
     
+    #---main loop----
     root.mainloop()
 
