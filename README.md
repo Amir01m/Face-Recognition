@@ -10,6 +10,7 @@ This project is designed as a **practical, extendable AI/ML project**, suitable 
 
 * 📷 Real-time face detection using camera feed
 * 👥 Simultaneous recognition of multiple faces
+* 📷 You can switch between cameras by press 1,2,3,...
 * 🗂 Automatic loading of known faces from a folder
 * 🏷 Identification by person name (based on image filename)
 * ❓ Marks unknown faces as `Unknown`
