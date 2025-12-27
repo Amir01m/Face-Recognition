@@ -1,17 +1,21 @@
 import os
+from anyio import current_time
 import cv2
 import face_recognition as fr
 from load_faces import face_loader
 from sql import can_log, insert_data
 from tkinter import messagebox
+import time
 # ---------- Camera ----------
 def main():
     known_faces , known_names = face_loader()
     cap = cv2.VideoCapture(0)
     current_cam = 0
     cam_map = {ord('0'):0, ord('1'):1, ord('2'):2, ord('3'):3}
-    
+    process_this_frame = True
     new_cam = 0
+    prev_time = 0
+    fps_list = []
     while True:
         try:
             ret, img = cap.read()
@@ -21,8 +25,28 @@ def main():
             messagebox.showerror("Error",f"Error accessing camera {current_cam}: {e}")      
             break
         
-        # Display current camera number
+        # Calculate FPS
+        current_time = time.time()
+        fps = 1 / (current_time - prev_time)
+        prev_time = current_time
         
+        fps_list.append(fps)
+        if len(fps_list) > 10:
+            fps_list.pop(0)
+        avg_fps = sum(fps_list) / len(fps_list)
+
+        cv2.putText(
+        img,
+        f"FPS: {int(avg_fps)}",
+        (10, 70),
+        cv2.FONT_HERSHEY_SIMPLEX,
+        1,
+        (0, 255, 255),
+        1
+        )
+
+
+        # Display current camera number
         cv2.putText(
         img,
         f"Camera {current_cam}",
@@ -33,10 +57,14 @@ def main():
         2
         )
         
-        rgb_img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        small_frame = cv2.resize(img, (0, 0), fx=0.25, fy=0.25)
+        rgb_img = cv2.cvtColor(small_frame, cv2.COLOR_BGR2RGB)
 
-        face_locations = fr.face_locations(rgb_img, model="hog")
-        face_encodings = fr.face_encodings(rgb_img, face_locations)
+        if process_this_frame:
+            face_locations = fr.face_locations(rgb_img)
+            face_encodings = fr.face_encodings(rgb_img, face_locations)
+
+        process_this_frame = not process_this_frame
 
         for (top, right, bottom, left), face_encoding in zip(face_locations, face_encodings):
 
@@ -49,11 +77,11 @@ def main():
                 if can_log(name):
                     insert_data(name)
             
-            cv2.rectangle(img, (left, top), (right, bottom), (255, 0, 0), 2)
+            cv2.rectangle(img, (4*left, 4*top), (4*right, 4*bottom), (255, 0, 0), 2)
             cv2.putText(
                 img,
                 name,
-                (left, top - 10),
+                (4*left, 4*(top-2)),
                 cv2.FONT_HERSHEY_PLAIN,
                 1.2,
                 (0, 255, 0),
